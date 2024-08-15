@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      My First App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button routerLink="/decision" routerDirection="forward">
+    Go to decision page
+  </ion-button>
+
+
+  {{personName | salutation}}<br>
+
+  {{nextPerson | salutation}}
+
+  <app-title></app-title>
+
+  <h1>
+    This is a H1 header
+  </h1>
+  <p>
+    This is a paragraph
+  </p>
+  <img src="../../assets/tiger.jfif">
+  <br>
+  <ion-button color="dark" (click)="alertFunction()">
+    Button 1
+  </ion-button>
+  <ion-input placeholder="Input box 1" [(ngModel)]="inputBox">
+  </ion-input>
+  <ion-checkbox labelPlacement="end" [(ngModel)]="checkbox">
+    I agree to the terms and conditions
+  </ion-checkbox>
+
+  <ion-input placeholder="Animal name?" [(ngModel)]="animalName">
+  </ion-input>
+  <ion-button (click)="checkAnimalName()">
+    Check animal name
+  </ion-button>
+
+  <div *ngIf="animalName=='tiger'">
+    Roar!!
+  </div>
+  <div *ngIf="animalName=='cat'">
+    Meow!!
+  </div>
+  <div *ngIf="animalName=='cow'">
+    Mooo!!!
+  </div>
+
+  <ion-button (click)="loopCars()">Execute for loop</ion-button>
+
+  <div *ngFor="let myCar of cars;let i=index;">
+   {{i+1}} {{myCar}}
+  </div>
+
+  <ion-button routerDirection="forward" routerLink="/next">
+    Go to next page
+  </ion-button>
+
+  <ion-button color="danger" (click)="goToNext()">
+    Go to next page with TS
+  </ion-button>
+
+  <div>
+    <ion-button (click)="calculateFunction()">
+      Calculate
+    </ion-button>
+    {{ result }}
+  </div>
+  
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>next</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="animalName">
+    {{ animalNameInNext | salutation }}
+  </div>
+  <div>
+    Animal name from central:
+    {{ animalNameInCentral }}
+  </div>
+
+  <div>
+    <ion-button (click)="calculateFunction()">
+      Calculate
+    </ion-button>
+    {{ result }}
+  </div>
+
+  <ion-button (click)="openModal()">
+    Open Modal
+  </ion-button>
+  
+</ion-content>
